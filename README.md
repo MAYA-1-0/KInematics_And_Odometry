@@ -1,1 +1,53 @@
-# KInematics_And_Odometry
+# Kinematics_And_Odometry
+
+#####  This repository contains kinematic and Odometry modelling of MAYA
+
+##### Robot wheel configuration
+
+![config](https://github.com/MAYA-1-0/KInematics_And_Odometry/blob/main/images/Screenshot%20from%202022-02-26%2021-26-41.png)
+
+This system used a three wheeled omnidirectional robot which is at 120 degrees from each other mounted on a triangular platform. Two wheels are considered as Front left and Front Right while the remaining wheel is considered as Rear wheel.
+
+The forward motion of the robot is achieved by rotating Front left and Front right wheels in opposite directions to each other while the rear wheel is not actuated actively, the rollers present in the rear omnidirectional wheels actuates the robot efficiently. The Angular motion of the robot is achieved by rotating all the three wheels in the same direction.
+
+The platform origin is located at its geometric median and all kinematic calculations are done based on this assumption.
+
+Let ‘R’ be the radius of the three omnidirectional wheels, ‘r’ be the wheel separation i.e the distance from platform’s centre to each wheel. Number of rotations is taken as feedback from each wheel’s encoder.
+
+Dynamixel MX106 motors are employed for the work, Dynamixel motors offer excellent features like precise position control, PID correction (less backlash), 360-degree position control, and fast communication.
+Several rotations from each wheel are separately subscribed over a ROS topic and are denoted as Nr, Nl, Nb in the calculations which are divided by a factor of 4096 which is the total number of steps in the dynamixel motor.
+
+
+### Usage and Requirements
+
+1. Clone this repository and put it under a ROS package named <odometry>
+2. For running Dynamizel motors by publishing commands we will need dynamixel workbench messages, This can be cloned to the same ROS Workspace
+```
+  git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
+```
+3. Pull docker image by typing the below in a terminal (Type trl+ Alt + T )
+```
+  docker pull mayakle/maya_wheels:3_wheeled
+```
+4. Open a terminal and type ,
+```
+  docker run -it --net=host 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
