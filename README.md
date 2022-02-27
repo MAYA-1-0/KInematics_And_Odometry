@@ -24,8 +24,19 @@ For running a common master over all system, follow the below steps
 rosmaster
 ```
 
-2. run ```ifconfig``` to get the ip of any system
-3. 
+2. Run ```ifconfig``` to get the ip address of any system
+3. Run the following commands in each terminal (or preferably add in bashrc Script) to create a remote master.
+    ```
+        export ROS_MASTER_URI=http://<HOST IP>:11311
+    ```
+    
+    ```
+        export ROS_IP=<remote/current system's IP>
+    ```
+    
+    ```
+        export ROS_HOSTNAME=<remote/current system's IP>
+    ```
 
 ### Usage and Requirements
 
@@ -56,8 +67,9 @@ rosmaster
   To switch on the Torque, which can be done by calling a service
   Open a terminal and type,
   ```
-      rosservice call /dynamixel_workbench_base/dynamixel_controllers/
+      rosservice call /dynamixel_workbench_base/dynamixel_controllers/dynamixel_command "Torque : True"
   ```
+  
   
   
 
