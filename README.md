@@ -17,6 +17,7 @@ Let ‘R’ be the radius of the three omnidirectional wheels, ‘r’ be the wh
 Dynamixel MX106 motors are employed for the work, Dynamixel motors offer excellent features like precise position control, PID correction (less backlash), 360-degree position control, and fast communication.
 Several rotations from each wheel are separately subscribed over a ROS topic and are denoted as Nr, Nl, Nb in the calculations which are divided by a factor of 4096 which is the total number of steps in the dynamixel motor.
 
+This project was built and Deployed on 2 Nvidia Jetson nano devices, so for communication between various sensors and wheels connected to both devices (
 
 ### Usage and Requirements
 
