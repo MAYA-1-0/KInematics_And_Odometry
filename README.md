@@ -33,6 +33,24 @@ Several rotations from each wheel are separately subscribed over a ROS topic and
 ```
   docker run -it --net=host 
 ```
+  This should create a docker, inside the docker 
+  NOTE: Before doing the following it is assumed thst the dynamixel motors have IDs set and same is mentioned in the yaml file which is inside docker (e.g : home/catkin_ws/src/dynamixel_workbench/dynamixel_workbench_controllers/config/joints.yaml), refer [robotics emanual](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/) to do the same.
+   
+  ```
+      source home/catkin_ws/devel/setup.bash
+  ```
+  ```
+      roslaunch dynamixel_workbench_controllers dynamixel_workbench_controllers.launch
+  ```
+  If all the motor have their IDs set and are detected, this will launch all the controllers (Topics and Services) in the dynamixel workbench,
+  Running ``` rostopic list``` and ```rosservice list``` will dislay all the topics and services from dynamixel workbench. 
+  To switch on the Torque, which can be done by calling a service
+  Open a terminal and type,
+  ```
+      rosservice call /dynamixel_workbench_base/dynamixel_controllers/
+  ```
+  
+  
 
 
 
