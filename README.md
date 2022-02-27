@@ -17,7 +17,15 @@ Let ‘R’ be the radius of the three omnidirectional wheels, ‘r’ be the wh
 Dynamixel MX106 motors are employed for the work, Dynamixel motors offer excellent features like precise position control, PID correction (less backlash), 360-degree position control, and fast communication.
 Several rotations from each wheel are separately subscribed over a ROS topic and are denoted as Nr, Nl, Nb in the calculations which are divided by a factor of 4096 which is the total number of steps in the dynamixel motor.
 
-This project was built and Deployed on 2 Nvidia Jetson nano devices, so for communication between various sensors and wheels connected to both devices (
+This project was built and Deployed on 2 Nvidia Jetson nano devices, so for communication between various sensors and wheels connected to both devices ( more information can be found in [Humanoid's Architecture Repository](https://github.com/MAYA-1-0/MAYA1.0_Architecture)
+For running a common master over all system, follow the below steps
+1. Run rosmaster in host computer
+```
+rosmaster
+```
+
+2. run ```ifconfig``` to get the ip of any system
+3. 
 
 ### Usage and Requirements
 
