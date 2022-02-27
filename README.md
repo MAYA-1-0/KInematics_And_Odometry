@@ -64,14 +64,23 @@ rosmaster
   ```
   If all the motor have their IDs set and are detected, this will launch all the controllers (Topics and Services) in the dynamixel workbench,
   Running ``` rostopic list``` and ```rosservice list``` will dislay all the topics and services from dynamixel workbench. 
-  To switch on the Torque, which can be done by calling a service
+5.  To switch on the Torque, which can be done by calling a service
   Open a terminal and type,
   ```
       rosservice call /dynamixel_workbench_base/dynamixel_controllers/dynamixel_command "Torque : True"
   ```
   
+6. Open a terminal and run,
+```
+    rosrun odometry nav.py
+```
+Topic named maya/base/goal will start running, to which linear distance and theta can be published in order to move the robot 
   
   
+7. To control the robot through Keyboard, after running above script, run
+```
+    rosrun odometry teleop.py
+```
 
 
 
